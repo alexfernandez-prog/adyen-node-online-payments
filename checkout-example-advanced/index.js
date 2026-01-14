@@ -50,6 +50,7 @@ app.post("/api/paymentMethods", async (req, res) => {
     const response = await checkout.PaymentsApi.paymentMethods({
       channel: "Web",
       merchantAccount: process.env.ADYEN_MERCHANT_ACCOUNT,
+      shopperReference: "AlexFern"
     });
     res.json(response);
   } catch (err) {
@@ -99,7 +100,9 @@ app.post("/api/payments", async (req, res) => {
       shopperStatement: "Aceitar o pagamento até 15 dias após o vencimento.Não cobrar juros. Não aceitar o pagamento com cheque",
       // below fields are required for Klarna, line items included
       countryCode: req.body.paymentMethod.type.includes("klarna") ? "DE" : null,
-      shopperReference: "12345",
+//      shopperReference: "AlexFern",
+//      shopperInteraction: "ContAuth",
+//      recurringProcessingModel: "CardOnFile",
       shopperEmail: "youremail@email.com",
       shopperLocale: "en_US",
       lineItems: [

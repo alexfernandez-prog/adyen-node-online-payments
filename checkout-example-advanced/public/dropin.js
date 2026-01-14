@@ -102,6 +102,7 @@ async function startCheckout() {
         showBrandIcon: true,
         hasHolderName: true,
         holderNameRequired: true,
+        billingAddress: { mode: 'postalCode' }, //this should load zip code on drop-in card but it isn't working
         name: "Credit or debit card",
         amount: {
           value: 10000,
