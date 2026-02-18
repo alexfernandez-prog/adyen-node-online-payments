@@ -27,6 +27,7 @@ async function startCheckout(countryCode = 'NL') {
       environment: "test",
       locale: locale,
       countryCode: countryCode,
+      
       showPayButton: false,
       translations: {
         "en_US": {
