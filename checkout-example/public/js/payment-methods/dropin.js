@@ -27,7 +27,7 @@ async function startCheckout(countryCode = 'NL') {
       environment: "test",
       locale: locale,
       countryCode: countryCode,
-      showPayButton: true,
+      showPayButton: false,
       translations: {
         "en_US": {
           "creditCard.securityCode.label": "CVV/CVC",
