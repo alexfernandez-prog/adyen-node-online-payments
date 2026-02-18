@@ -100,9 +100,9 @@ app.post("/api/payments", async (req, res) => {
       shopperStatement: "Aceitar o pagamento até 15 dias após o vencimento.Não cobrar juros. Não aceitar o pagamento com cheque",
       // below fields are required for Klarna, line items included
       countryCode: req.body.paymentMethod.type.includes("klarna") ? "DE" : null,
-//      shopperReference: "AlexFern",
-//      shopperInteraction: "ContAuth",
-//      recurringProcessingModel: "CardOnFile",
+      shopperReference: "AlexFern",
+      shopperInteraction: "ContAuth",
+      recurringProcessingModel: "CardOnFile",
       shopperEmail: "youremail@email.com",
       shopperLocale: "en_US",
       lineItems: [

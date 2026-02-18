@@ -128,7 +128,17 @@ async function startCheckout() {
     const checkout = await createAdyenCheckout(paymentMethodsResponse);
     const card = new Card(checkout, {
       // Optional configuration.
-      billingAddressRequired: false, // when true show the billing address input fields and mark them as required.
+billingAddressRequired: false,
+      dataConfiguration: {
+        billingAddress: {
+          postalCode: "required",
+          country: "hidden",
+          street: "hidden",
+          houseNumberOrName: "hidden",
+          city: "hidden",
+          stateOrProvince: "hidden"
+        }
+      },
       showBrandIcon: true, // when false not showing the brand logo 
       hasHolderName: true, // show holder name
       holderNameRequired: true, // make holder name mandatory
@@ -138,7 +148,7 @@ async function startCheckout() {
         expiryDate: 'MM/YY',
         securityCodeThreeDigits: '123',
         securityCodeFourDigits: '1234',
-        holderName: 'J. Smith'
+        holderName: 'J. Smith' 
       }
     }).mount('#component-container');
 
