@@ -76,8 +76,7 @@ app.get("/checkout/card", (req, res) =>
 app.get("/checkout/dropin", (req, res) =>
   res.render("dropin", {
     clientKey: config.adyen.ADYEN_CLIENT_KEY,
-    showCountrySelector: true,
-    showPayButton: true
+    showCountrySelector: true
   })
 );
 
