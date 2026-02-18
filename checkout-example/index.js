@@ -77,10 +77,7 @@ app.get("/checkout/dropin", (req, res) =>
   res.render("dropin", {
     clientKey: config.adyen.ADYEN_CLIENT_KEY,
     showCountrySelector: true,
-    showPayButton: false,
-      shopperReference: "AlexFern",
-      shopperInteraction: "ContAuth",
-      recurringProcessingModel: "CardOnFile"
+    showPayButton: true
   })
 );
 
