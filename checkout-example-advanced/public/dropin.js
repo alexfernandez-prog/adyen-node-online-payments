@@ -21,10 +21,10 @@ async function startCheckout() {
       environment: "test",
       amount: {
         value: 10000,
-        currency: 'EUR'
+        currency: 'USD'
       },
       locale: "en_US",
-      countryCode: 'NL',
+      countryCode: 'US',
       showPayButton: true,
       // override Security Code label
       translations: {
@@ -99,11 +99,11 @@ async function startCheckout() {
 
     const paymentMethodsConfiguration = {
       card: {
-        showBrandIcon: true,
-        hasHolderName: true,
-        holderNameRequired: true,
+        showBrandIcon: false,
+        hasHolderName: false,
+        holderNameRequired: false,
         billingAddress: {
-          postalCode: "required",
+          postalCode: "hidden",
           country: "hidden",
           street: "hidden",
           houseNumberOrName: "hidden",
@@ -111,11 +111,11 @@ async function startCheckout() {
           stateOrProvince: "hidden"}, //this should load zip code on drop-in card but it isn't working
         name: "Credit or debit card",
         amount: {
-          value: 10000,
+          value: 4995,
           currency: "EUR",
         },
         placeholders: {
-          cardNumber: '1234 5678 9012 3456',
+          cardNumber: '0000 0000 0000 0000',
           expiryDate: 'MM/YY',
           securityCodeThreeDigits: '123',
           securityCodeFourDigits: '1234',
